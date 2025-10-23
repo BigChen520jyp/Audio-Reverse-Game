@@ -24,10 +24,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}>
+        <header className="border-b border-black/10 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-10">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div className="font-semibold tracking-tight flex items-center gap-2">
+              <span className="inline-block h-6 w-6 rounded-md bg-accent"></span>
+              <span>Reverse</span>
+            </div>
+            <a
+              className="text-accent hover:text-black"
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.091.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.342-3.369-1.342-.455-1.158-1.11-1.467-1.11-1.467-.907-.62.069-.607.069-.607 1.004.07 1.532 1.031 1.532 1.031.892 1.528 2.341 1.087 2.91.832.091-.647.35-1.087.636-1.338-2.221-.253-4.555-1.111-4.555-4.944 0-1.091.39-1.984 1.03-2.683-.104-.253-.447-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.338 1.909-1.294 2.748-1.025 2.748-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.337 4.687-4.565 4.936.359.31.678.92.678 1.852 0 1.336-.012 2.414-.012 2.741 0 .267.18.577.688.479A10.004 10.004 0 0 0 22 12c0-5.523-4.477-10-10-10Z"/>
+              </svg>
+            </a>
+          </div>
+        </header>
+        <main>{children}</main>
       </body>
     </html>
   );
